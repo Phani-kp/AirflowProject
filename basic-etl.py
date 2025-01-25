@@ -3,13 +3,13 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator
 
 def extract():
-    print("Extracting data...")
+    print("Extracting data from")
 
 def transform():
-    print("Transforming data...")
+    print("Transforming data from")
 
 def load():
-    print("Loading data...")
+    print("Loading data from")
 
 default_args = {
     'owner': 'airflow',
@@ -17,7 +17,7 @@ default_args = {
     'email_on_failure': False,
     'email_on_retry': False,
     'retries': 1,
-    'retry_delay': timedelta(minutes=5),
+    'retry_delay': timedelta(minutes=10),
 }
 
 with DAG(
