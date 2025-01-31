@@ -2,14 +2,14 @@ from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 
-def extract():
-    print("Extracting data from")
+def extract(**kwargs):
+    print("Extracting data")
 
-def transform():
-    print("Transforming data from")
+def transform(**kwargs):
+    print("Transforming data")
 
-def load():
-    print("Loading data from")
+def load(**kwargs):
+    print("Loading data")
 
 default_args = {
     'owner': 'airflow',
